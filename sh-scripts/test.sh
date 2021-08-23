@@ -1,4 +1,4 @@
 cd synapses-test || exit
-npm install
+npm ci
 npm test
 cd ../
