@@ -19,7 +19,7 @@ const syn = require('synapses');
 ### Create a random neural network by providing its layer sizes
 
 ```javascript
-let randNet = new syn.net({layers: [2, 3, 1]});
+let randNet = new syn.Net({layers: [2, 3, 1]});
 ```
 
 * Input layer: the first layer of the network has 2 nodes.
@@ -39,7 +39,7 @@ randNet.json();
 ### Create a neural network by providing its json
 
 ```javascript
-let net = new syn.net({
+let net = new syn.Net({
     json:
         "[[{\"activationF\" : \"sigmoid\", \"weights\" : [-0.5,0.1,0.8]}" +
         " ,{\"activationF\" : \"sigmoid\", \"weights\" : [0.7,0.6,-0.1]}," +
@@ -70,7 +70,7 @@ In practice, for a neural network to be fully trained, it should be fitted with 
 ### Create a neural network for testing
 
 ```javascript
-new syn.net({layers: [2, 3, 1], seed: 1000});
+new syn.Net({layers: [2, 3, 1], seed: 1000});
 ```
 
 We can provide a `seed` to create a non-random neural network.
@@ -96,7 +96,7 @@ function weight(_layerIndex) {
     return 1.0 - 2.0 * Math.random();
 }
 
-let customNet = new syn.net({
+let customNet = new syn.Net({
     layers: [4, 6, 8, 5, 3],
     activation: activation,
     weight: weight
@@ -147,7 +147,7 @@ syn.stats.score(expAndPredVals);
 // 0.6
 ```
 
-### Create a codec by providing the attributes and the data points
+### Create a `Codec` by providing the attributes and the data points
 
 * One hot encoding is a process that turns discrete attributes into a list of 0.0 and 1.0.
 * Minmax normalization scales continuous attributes into values between 0.0 and 1.0.
@@ -189,7 +189,7 @@ let attributes = [
     ["species", true],
 ];
 
-let codec = new syn.codec({attributes: attributes, data: dataset});
+let codec = new syn.Codec({attributes: attributes, data: dataset});
 ```
 
 * The first parameter is a list of pairs that define the name and the type (discrete or not) of each attribute.
@@ -211,10 +211,10 @@ let codecJson = codec.json();
 //   "\"Fields\" : [{\"key\" : \"species\",\"values\" : [\"virginica\",\"versicolor\",\"setosa\"]}]}]"
 ```
 
-### Create a codec by providing its json
+### Create a `Codec` by providing its json
 
 ```javascript
-new syn.codec({json: codecJson})
+new syn.Codec({json: codecJson})
 ```
 
 ### Encode a data point

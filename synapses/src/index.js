@@ -4,8 +4,8 @@ const net = require('./net');
 const stats = require('./stats');
 
 module.exports = {
-    codec: codec,
+    Codec: codec,
     fun: fun,
-    net: net,
+    Net: net,
     stats: stats
 }

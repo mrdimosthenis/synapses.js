@@ -34,7 +34,7 @@ describe('customized network tests', function () {
         return 1.0 - 2.0 * random();
     }
 
-    let justCreatedNet = new syn.net({
+    let justCreatedNet = new syn.Net({
         layers: layers,
         activation: activation,
         weight: weight
@@ -46,7 +46,7 @@ describe('customized network tests', function () {
     let neuralNetworkSvg =
         fs.readFileSync('../scala-synapses/test-resources/drawing.svg', 'utf8');
 
-    let neuralNetwork = new syn.net({json: neuralNetworkJson});
+    let neuralNetwork = new syn.Net({json: neuralNetworkJson});
 
     let prediction = neuralNetwork.predict(inputValues);
 
@@ -54,7 +54,7 @@ describe('customized network tests', function () {
 
     it('neural network of/to json', function () {
         assert.equal(
-            new syn.net({json: justCreatedNet.json()}).json(),
+            new syn.Net({json: justCreatedNet.json()}).json(),
             justCreatedNet.json()
         );
     });

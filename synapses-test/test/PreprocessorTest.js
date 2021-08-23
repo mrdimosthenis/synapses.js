@@ -15,14 +15,14 @@ fs.createReadStream('../scala-synapses/test-resources/mnist_mini.csv')
 
             let loadedPreprocessorJson = fs.readFileSync('../scala-synapses/test-resources/preprocessor_mini.json');
 
-            let loadedPreprocessor = new syn.codec({json: loadedPreprocessorJson});
+            let loadedPreprocessor = new syn.Codec({json: loadedPreprocessorJson});
 
             let pixelKeysWithFlags = [...Array(784).keys()]
                 .map(x => ["pixel" + x, false]);
 
             let keysWithDiscreteFlags = [["label", true], ...pixelKeysWithFlags];
 
-            let preprocessor = new syn.codec({
+            let preprocessor = new syn.Codec({
                 attributes: keysWithDiscreteFlags,
                 data: dataPoints
             });
@@ -35,7 +35,7 @@ fs.createReadStream('../scala-synapses/test-resources/mnist_mini.csv')
 
             it('codec of/to json', function () {
                 assert.equal(
-                    new syn.codec({json: preprocessorJson}).json(),
+                    new syn.Codec({json: preprocessorJson}).json(),
                     preprocessorJson
                 );
             });

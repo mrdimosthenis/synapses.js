@@ -3,12 +3,12 @@ const syn = require('../../synapses/src/index');
 
 describe('customized network tests', function () {
 
-    let randNet = new syn.net({layers: [2, 3, 1]});
+    let randNet = new syn.Net({layers: [2, 3, 1]});
 
     randNet.json();
-    console.log(randNet.json());
+    // console.log(randNet.json());
 
-    let net = new syn.net({
+    let net = new syn.Net({
         json:
             "[[{\"activationF\" : \"sigmoid\", \"weights\" : [-0.5,0.1,0.8]}" +
             " ,{\"activationF\" : \"sigmoid\", \"weights\" : [0.7,0.6,-0.1]}," +
@@ -17,11 +17,11 @@ describe('customized network tests', function () {
     });
 
     net.predict([0.2, 0.6]);
-    console.log(net.predict([0.2, 0.6]));
+    // console.log(net.predict([0.2, 0.6]));
 
     net.fit(0.1, [0.2, 0.6], [0.9]);
 
-    new syn.net({layers: [2, 3, 1], seed: 1000});
+    new syn.Net({layers: [2, 3, 1], seed: 1000});
 
     function activation(layerIndex) {
         switch (layerIndex) {
@@ -40,7 +40,7 @@ describe('customized network tests', function () {
         return 1.0 - 2.0 * Math.random();
     }
 
-    let customNet = new syn.net({
+    let customNet = new syn.Net({
         layers: [4, 6, 8, 5, 3],
         activation: activation,
         weight: weight
@@ -57,10 +57,10 @@ describe('customized network tests', function () {
     ];
 
     syn.stats.rmse(expAndPredVals);
-    console.log(syn.stats.rmse(expAndPredVals));
+    // console.log(syn.stats.rmse(expAndPredVals));
 
     syn.stats.score(expAndPredVals);
-    console.log(syn.stats.score(expAndPredVals));
+    // console.log(syn.stats.score(expAndPredVals));
 
     let setosa = {
         petal_length: "1.5",
@@ -96,18 +96,18 @@ describe('customized network tests', function () {
         ["species", true],
     ];
 
-    let codec = new syn.codec({attributes: attributes, data: dataset});
+    let codec = new syn.Codec({attributes: attributes, data: dataset});
 
     let codecJson = codec.json();
-    console.log(codec.json());
+    // console.log(codec.json());
 
-    new syn.codec({json: codecJson})
+    new syn.Codec({json: codecJson})
 
     let encodedSetosa = codec.encode(setosa);
-    console.log(codec.encode(setosa));
+    // console.log(codec.encode(setosa));
 
     codec.decode(encodedSetosa);
-    console.log(codec.decode(encodedSetosa));
+    // console.log(codec.decode(encodedSetosa));
 
     it('trivial', function () {
         assert.equal(1, 1);

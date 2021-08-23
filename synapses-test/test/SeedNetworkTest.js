@@ -6,7 +6,7 @@ describe('seed network tests', function () {
 
     let layers = [4, 6, 5, 3];
 
-    let network = new syn.net({layers: layers, seed: 1000})
+    let network = new syn.Net({layers: layers, seed: 1000})
 
     let inputValues = [1.0, 0.5625, 0.511111, 0.47619];
 
@@ -180,7 +180,7 @@ describe('seed network tests', function () {
 
     it('neural network of/to json', function () {
         assert.equal(
-            new syn.net({json: network.json()}).json(),
+            new syn.Net({json: network.json()}).json(),
             network.json()
         );
     });
