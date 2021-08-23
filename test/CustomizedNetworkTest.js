@@ -1,8 +1,7 @@
 const assert = require('assert');
 const fs = require('fs');
 
-const fun = require('../src/fun');
-const net = require('../src/net');
+const syn = require('../src/index');
 
 let seed = 1;
 
@@ -22,13 +21,13 @@ describe('customized network tests', function () {
     function activation(layerIndex) {
         switch (layerIndex) {
             case 0:
-                return fun.SIGMOID;
+                return syn.fun.SIGMOID;
             case 1:
-                return fun.IDENTITY;
+                return syn.fun.IDENTITY;
             case 2:
-                return fun.LEAKY_RE_LU;
+                return syn.fun.LEAKY_RE_LU;
             case 3:
-                return fun.TANH;
+                return syn.fun.TANH;
         }
     }
 
@@ -36,7 +35,7 @@ describe('customized network tests', function () {
         return 1.0 - 2.0 * random();
     }
 
-    let justCreatedNet = new net({
+    let justCreatedNet = new syn.net({
         layers: layers,
         activation: activation,
         weight: weight
@@ -48,7 +47,7 @@ describe('customized network tests', function () {
     let neuralNetworkSvg =
         fs.readFileSync('./scala-synapses/test-resources/drawing.svg', 'utf8');
 
-    let neuralNetwork = new net({json: neuralNetworkJson});
+    let neuralNetwork = new syn.net({json: neuralNetworkJson});
 
     let prediction = neuralNetwork.predict(inputValues);
 
@@ -56,7 +55,7 @@ describe('customized network tests', function () {
 
     it('neural network of/to json', function () {
         assert.equal(
-            new net({json: justCreatedNet.json()}).json(),
+            new syn.net({json: justCreatedNet.json()}).json(),
             justCreatedNet.json()
         );
     });

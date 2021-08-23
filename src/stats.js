@@ -1,9 +1,9 @@
-const syn = require('./main');
+const main = require('./main');
 
 module.exports = {
 
-    rmse: syn.StatsJs.rmse,
+    rmse: main.StatsJs.rmse,
 
-    score: syn.StatsJs.score
+    score: main.StatsJs.score
 
 }

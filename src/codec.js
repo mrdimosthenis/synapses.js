@@ -1,14 +1,14 @@
-const syn = require('./main');
+const main = require('./main');
 
 module.exports = class Codec {
 
     constructor(argmap) {
         if ('json' in argmap)
-            this.codecJs = syn.CodecJsObj.applyJson(
+            this.codecJs = main.CodecJsObj.applyJson(
                 argmap.json
             );
         else
-            this.netJs = syn.CodecJsObj.apply(
+            this.codecJs = main.CodecJsObj.apply(
                 argmap.attributes,
                 argmap.data
             );

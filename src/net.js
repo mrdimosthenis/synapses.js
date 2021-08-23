@@ -1,25 +1,25 @@
-const syn = require('./main');
+const main = require('./main');
 
 module.exports = class Net {
 
     constructor(argmap) {
         if ('activation' in argmap)
-            this.netJs = syn.NetJsObj.apply(
+            this.netJs = main.NetJsObj.apply(
                 argmap.layers,
                 argmap.activation,
                 argmap.weight
             );
         else if ('seed' in argmap)
-            this.netJs = syn.NetJsObj.applySeed(
+            this.netJs = main.NetJsObj.applySeed(
                 argmap.layers,
                 argmap.seed
             );
         else if ('json' in argmap)
-            this.netJs = syn.NetJsObj.applyJson(
+            this.netJs = main.NetJsObj.applyJson(
                 argmap.json
             );
         else
-            this.netJs = syn.NetJsObj.applyRandom(
+            this.netJs = main.NetJsObj.applyRandom(
                 argmap.layers
             );
     }

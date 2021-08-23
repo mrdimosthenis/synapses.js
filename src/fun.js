@@ -1,13 +1,13 @@
-const syn = require('./main');
+const main = require('./main');
 
 module.exports = {
 
-    SIGMOID: syn.FunJs.sigmoid,
+    SIGMOID: main.FunJs.sigmoid,
 
-    IDENTITY: syn.FunJs.identity,
+    IDENTITY: main.FunJs.identity,
 
-    TANH: syn.FunJs.tanh,
+    TANH: main.FunJs.tanh,
 
-    LEAKY_RE_LU: syn.FunJs.leakyReLU
+    LEAKY_RE_LU: main.FunJs.leakyReLU
 
 }
