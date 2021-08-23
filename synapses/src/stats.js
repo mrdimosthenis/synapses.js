@@ -23,8 +23,9 @@ const main = require('./main');
  * ```
  * score(expAndPredVals);
  * ```
+ * @hideconstructor
  */
-module.exports = {
+class stats {
 
     /**
      * Root Mean Square Error.
@@ -34,7 +35,9 @@ module.exports = {
      * @param outputPairs An iterable of array-pairs that contain the expected and predicted values.
      * @return The value of the RMSE metric.
      */
-    rmse: main.StatsJs.rmse,
+    static rmse(outputPairs){
+        return main.StatsJs.rmse(outputPairs);
+    }
 
     /**
      * Classification Accuracy.
@@ -46,6 +49,10 @@ module.exports = {
      * @param outputPairs An iterable of array-pairs that contain the expected and predicted values.
      * @return The score of the classification accuracy.
      */
-    score: main.StatsJs.score
+    static score(outputPairs){
+        return main.StatsJs.score(outputPairs);
+    }
 
 }
+
+module.exports = stats;

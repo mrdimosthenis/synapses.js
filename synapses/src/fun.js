@@ -4,8 +4,10 @@ const main = require('./main');
  * The activation functions a neuron can have.
  *
  * They can be used in the arguments of neural network's constructor.
+ *
+ * @hideconstructor
  */
-module.exports = {
+class fun {
 
     /**
      * Sigmoid takes any value as input and outputs values in the range of 0.0 to 1.0.
@@ -14,7 +16,7 @@ module.exports = {
      * x => 1.0 / (1.0 + Math.exp(-x))
      * ```
      */
-    SIGMOID: main.FunJs.sigmoid,
+    static SIGMOID = main.FunJs.sigmoid;
 
     /**
      * Identity is a linear function where the output is equal to the input.
@@ -23,7 +25,7 @@ module.exports = {
      * x => x
      * ```
      */
-    IDENTITY: main.FunJs.identity,
+    static IDENTITY = main.FunJs.identity;
 
     /**
      * Tanh is similar to sigmoid, but outputs values in the range of -1.0 and 1.0.
@@ -32,7 +34,7 @@ module.exports = {
      * x => Math.tanh(x)
      * ```
      */
-    TANH: main.FunJs.tanh,
+    static TANH = main.FunJs.tanh;
 
     /**
      * LeakyReLU gives a small proportion of x if x is negative and x otherwise.
@@ -41,6 +43,8 @@ module.exports = {
      * x => (x < 0.0) ? 0.01 * x : x
      * ```
      */
-    LEAKY_RE_LU: main.FunJs.leakyReLU
+    static LEAKY_RE_LU = main.FunJs.leakyReLU;
 
 }
+
+module.exports = fun;

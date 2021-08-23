@@ -1,7 +1,7 @@
 const main = require('./main');
 
 /**
- * The constructors and methods of neural networks.
+ * The constructor and methods of neural networks.
  *
  * Create a neural network:
  * ```
@@ -23,7 +23,7 @@ const main = require('./main');
  * net.json();
  * ```
  */
-module.exports = class Net {
+class Net {
 
     /**
      * Creates a neural network.
@@ -118,3 +118,5 @@ module.exports = class Net {
     }
 
 }
+
+module.exports = Net;

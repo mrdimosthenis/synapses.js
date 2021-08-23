@@ -1,7 +1,7 @@
 const main = require('./main');
 
 /**
- * The constructors and methods of codecs.
+ * The constructor and methods of codecs.
  *
  * Create a codec:
  * ```
@@ -40,7 +40,7 @@ const main = require('./main');
  * codec.json();
  * ```
  */
-module.exports = class Codec {
+class Codec {
 
     /**
      * Creates a codec by consuming an iterable of data points.
@@ -94,3 +94,5 @@ module.exports = class Codec {
     }
 
 }
+
+module.exports = Codec;
