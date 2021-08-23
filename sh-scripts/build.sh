@@ -6,5 +6,6 @@ echo "module.exports = {CodecJsObj: CodecJsObj, NetJsObj: NetJsObj, StatsJs: Sta
 cd synapses || exit
 npm install
 rm -rf /out
-jsdoc -c ../jsdoc.json --readme readme.md src/codec.js src/fun.js src/net.js src/stats.js src/index.js
+jsdoc -c ../jsdoc.json --readme readme.md src/codec.js src/fun.js src/net.js src/stats.js
 cd ../
+cp synapses/readme.md readme.md

@@ -1,9 +1,22 @@
 {
   "name": "synapses",
   "version": "8.0.0",
-  "description": "",
+  "description": "A neural networks library for JavaScript",
   "main": "src/index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrdimosthenis/synapses.js"
+  },
+  "keywords": [
+    "machine-learning",
+    "deep-learning",
+    "neural-network",
+    "javascript"
+  ],
+  "author": "Dimos Michailidis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrdimosthenis/synapses.js/issues"
+  },
+  "homepage": "https://github.com/mrdimosthenis/Synapses"
 }
