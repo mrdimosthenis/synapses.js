@@ -18,5 +18,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: synapses/package-lock.json
     - run: bash sh-scripts/build.sh
     - run: bash sh-scripts/test.sh
