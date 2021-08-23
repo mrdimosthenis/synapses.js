@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="IDENTITY"><span class="type-signature">(constant) </span>IDENTITY<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Identity is a linear function where the output is equal to the input.</p>
+<pre class="prettyprint source"><code>x => x
+</code></pre>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fun.js.html">fun.js</a>, <a href="fun.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="LEAKY_RE_LU"><span class="type-signature">(constant) </span>LEAKY_RE_LU<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>LeakyReLU gives a small proportion of x if x is negative and x otherwise.</p>
+<pre class="prettyprint source"><code>x => (x &lt; 0.0) ? 0.01 * x : x
+</code></pre>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fun.js.html">fun.js</a>, <a href="fun.js.html#line44">line 44</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="SIGMOID"><span class="type-signature">(constant) </span>SIGMOID<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Sigmoid takes any value as input and outputs values in the range of 0.0 to 1.0.</p>
+<pre class="prettyprint source"><code>x => 1.0 / (1.0 + Math.exp(-x))
+</code></pre>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fun.js.html">fun.js</a>, <a href="fun.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="stats"><span class="type-signature">(constant) </span>stats<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Measure the difference between the values predicted by a neural network and the
+observed values.</p>
+<pre class="prettyprint source"><code>let expAndPredVals = [
+  [[0.0, 0.0, 1.0], [0.0, 0.1, 0.9]],
+  [[0.0, 1.0, 0.0], [0.8, 0.2, 0.0]],
+  [[1.0, 0.0, 0.0], [0.7, 0.1, 0.2]],
+  [[1.0, 0.0, 0.0], [0.3, 0.3, 0.4]],
+  [[0.0, 0.0, 1.0], [0.2, 0.2, 0.6]]
+];
+</code></pre>
+<p>Calculate the root mean square error:</p>
+<pre class="prettyprint source"><code>rmse(expAndPredVals);
+</code></pre>
+<p>Calculate the score of the classification accuracy:</p>
+<pre class="prettyprint source"><code>score(expAndPredVals);
+</code></pre>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stats.js.html">stats.js</a>, <a href="stats.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="TANH"><span class="type-signature">(constant) </span>TANH<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Tanh is similar to sigmoid, but outputs values in the range of -1.0 and 1.0.</p>
+<pre class="prettyprint source"><code>x => Math.tanh(x)
+</code></pre>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fun.js.html">fun.js</a>, <a href="fun.js.html#line35">line 35</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Codec.html">Codec</a></li><li><a href="Net.html">Net</a></li></ul><h3>Global</h3><ul><li><a href="global.html#IDENTITY">IDENTITY</a></li><li><a href="global.html#LEAKY_RE_LU">LEAKY_RE_LU</a></li><li><a href="global.html#SIGMOID">SIGMOID</a></li><li><a href="global.html#stats">stats</a></li><li><a href="global.html#TANH">TANH</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Aug 24 2021 01:32:29 GMT+0300 (Eastern European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
