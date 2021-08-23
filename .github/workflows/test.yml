@@ -17,11 +17,11 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+    - run: bash sh-scripts/build.sh
+    - run: bash sh-scripts/test.sh
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: synapses/package-lock.json
-    - run: bash sh-scripts/build.sh
-    - run: bash sh-scripts/test.sh
