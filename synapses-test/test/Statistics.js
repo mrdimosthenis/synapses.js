@@ -1,5 +1,5 @@
 const assert = require('assert');
-const syn = require('../src/index');
+const syn = require('../../synapses/src/index');
 
 describe('statistics tests', function () {
 

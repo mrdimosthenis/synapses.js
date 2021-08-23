@@ -1,10 +1,10 @@
 const assert = require('assert');
 const csv = require('csv-parser');
 const fs = require('fs');
-const syn = require('../src/index');
+const syn = require('../../synapses/src/index');
 
 const dataPoints = [];
-fs.createReadStream('./scala-synapses/test-resources/mnist_mini.csv')
+fs.createReadStream('../scala-synapses/test-resources/mnist_mini.csv')
     .pipe(csv())
     .on('data', (row) => {
         dataPoints.push(row);
@@ -13,7 +13,7 @@ fs.createReadStream('./scala-synapses/test-resources/mnist_mini.csv')
 
         describe('preprocessor tests', function () {
 
-            let loadedPreprocessorJson = fs.readFileSync('./scala-synapses/test-resources/preprocessor_mini.json');
+            let loadedPreprocessorJson = fs.readFileSync('../scala-synapses/test-resources/preprocessor_mini.json');
 
             let loadedPreprocessor = new syn.codec({json: loadedPreprocessorJson});
 

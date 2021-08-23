@@ -1,7 +1,6 @@
 const assert = require('assert');
 const fs = require('fs');
-
-const syn = require('../src/index');
+const syn = require('../../synapses/src/index');
 
 let seed = 1;
 
@@ -42,10 +41,10 @@ describe('customized network tests', function () {
     });
 
     let neuralNetworkJson =
-        fs.readFileSync('./scala-synapses/test-resources/network.json');
+        fs.readFileSync('../scala-synapses/test-resources/network.json');
 
     let neuralNetworkSvg =
-        fs.readFileSync('./scala-synapses/test-resources/drawing.svg', 'utf8');
+        fs.readFileSync('../scala-synapses/test-resources/drawing.svg', 'utf8');
 
     let neuralNetwork = new syn.net({json: neuralNetworkJson});
 

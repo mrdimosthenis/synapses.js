@@ -1,0 +1,9 @@
+{
+  "name": "synapses",
+  "version": "8.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

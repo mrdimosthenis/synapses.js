@@ -1,10 +1,8 @@
 {
-  "name": "synapses",
+  "name": "synapses-test",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
   "scripts": {
-    "create-src-main-js": "./sh-scripts/create-src-main-js.sh",
     "test": "mocha"
   },
   "keywords": [],
