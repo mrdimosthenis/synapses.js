@@ -1,4 +1,4 @@
 /.idea/
-synapses/node_modules/
-synapses/src/main.js
-synapses-test/node_modules/
+/synapses/node_modules/
+/synapses/src/main.js
+/synapses-test/node_modules/

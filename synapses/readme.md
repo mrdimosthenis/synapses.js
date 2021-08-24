@@ -7,7 +7,7 @@ A **neural networks** library for **JavaScript**!
 ### Install synapses-java
 
 ```
-npm i synapses@8.0.0
+npm i synapses@8.0.1
 ```
 
 ### Require the library
